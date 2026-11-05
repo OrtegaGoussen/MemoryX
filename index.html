@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MemoryX</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="app">
+
+    <header class="bar">
+      <button id="startBtn" class="btn" type="button">Empezar</button>
+      <div class="readouts" aria-live="polite">
+        <span>Nivel <b id="levelLabel">1</b> de <b id="levelTotal">1</b></span>
+        <span><b id="moves">0</b> movimientos</span>
+        <span>Tiempo: <b id="time">0:00</b></span>
+        <span id="recordWrap" hidden>Récord: <b id="record">0:00</b></span>
+      </div>
+    </header>
+
+    <nav id="levelNav" class="levels" aria-label="Niveles"></nav>
+
+    <p id="hint" class="hint">Tocá «Empezar» para dar vuelta las cartas.</p>
+
+    <section id="board" class="board idle" aria-label="Tablero de cartas"></section>
+
+    <section class="stats" aria-label="Datos del experimento">
+      <div class="stat"><b id="statAttempts">0</b><span>intentos</span></div>
+      <div class="stat"><b id="statHits">0</b><span>aciertos</span></div>
+      <div class="stat"><b id="statRate">0 %</b><span>de aciertos</span></div>
+      <div class="stat-actions">
+        <button id="statsBtn" class="btn small" type="button">Descargar estadísticas</button>
+        <button id="clearBtn" class="btn small ghost" type="button">Borrar datos</button>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="overlay" class="overlay" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="overlayTitle">
+      <h2 id="overlayTitle"></h2>
+      <p id="overlayText"></p>
+      <button id="overlayBtn" class="btn" type="button"></button>
+    </div>
+  </div>
+
+  <script src="js/levels.js"></script>
+  <script src="js/xlsx.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
